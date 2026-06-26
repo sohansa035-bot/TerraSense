@@ -33,7 +33,7 @@ TerraSense is a scalable, low-cost AgTech product designed to transform environm
 | **Language** | English only | Local / Vernacular |
 | **Connectivity** | High-speed Internet required | Offline-first / GSM Edge Node |
 | **Interface** | Complex Mobile/Web UI | Voice Assistant First |
-| **Hardware** | $1,000+ proprietary rigs | Subsidized ESP32 IoT Nodes |
+| **Hardware** | $1,000+ proprietary rigs | Planned Low-cost ESP32 Edge Node |
 
 ---
 
@@ -55,7 +55,7 @@ TerraSense creates a closed-loop system for farm management:
   <img src="assets/dashboard.png" alt="Mission Control Dashboard Prototype" width="90%" />
 </div>
 
-*Current UI/UX Mockups & Planned Screens:*
+*Planned Product Screens:*
 - ✅ **Dashboard** (Shown above)
 - ⏳ **Farmer Home**
 - ⏳ **Ask Assistant**
@@ -83,7 +83,7 @@ Investors and stakeholders can track our development milestones here:
 
 ### Current Implementation (Software Prototype)
 
-The current repository houses the v0.1 UI/UX prototype, built using React via CDN (no build tooling) to allow instant deployment and rapid iteration without complex toolchains.
+The current repository houses the v0.1 UI/UX prototype, built as a frontend prototype using HTML/CSS with lightweight React integration via CDN to allow instant deployment and rapid iteration without complex toolchains.
 
 ```mermaid
 graph LR
@@ -115,6 +115,28 @@ graph LR
     Cloud -->|Response| Voice
     Voice -->|Audio| Farmer
 ```
+
+---
+
+## ⚖️ Engineering Decisions
+
+* **Why Software First?**
+  Validate product-market fit before investing heavily in hardware manufacturing.
+* **Why Voice Interface?**
+  Lowers the digital literacy barrier, allows hands-free usage, and provides immediate regional language support.
+* **Why ESP32?**
+  Low cost, extremely low power consumption (deep sleep), and highly documented for easy deployment.
+* **Why GSM?**
+  Provides significantly better and more reliable rural farm coverage than Wi-Fi or LoRaWAN.
+
+---
+
+## 🚧 Current Limitations
+
+* **Prototype UI only**: The dashboard uses simulated static data for UX validation.
+* **No hardware implementation yet**: Sensor nodes exist only in architectural planning.
+* **Rule-based recommendation engine**: Predictive insights do not yet use live Machine Learning models.
+* **Field validation pending**: True accuracy will be determined during v1.0 pilot testing.
 
 ---
 
