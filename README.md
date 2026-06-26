@@ -1,182 +1,142 @@
 <div align="center">
 
 # 🌿 TerraSense
-**Intelligence Without Internet. AI-Powered Agri Assistant for Every Acre.**
 
-[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=for-the-badge&logo=espressif&logoColor=white)](https://www.espressif.com/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
+**Intelligence for Smallholder Farmers**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Status: Active](https://img.shields.io/badge/Status-Active-success.svg)]()
-[![Version](https://img.shields.io/badge/Version-v0.1.0-blue.svg)]()
+*From data to actionable farming decisions.*
 
-*Made with ❤️ for Indian Farmers*
+**Product Designer • Software Prototype • System Architecture**
 
 </div>
 
 ---
 
-## 🎯 Product Vision (The Why)
+## 🎯 Product Vision
 
-| 👥 Target User | ⚠️ The Problem | ✅ The Solution |
-| :--- | :--- | :--- |
-| **Smallholder farmers** and **Farmer Producer Organizations (FPOs)** across rural India. | **₹92,000 Cr. annual post-harvest loss** in India due to reliance on intuition rather than hyper-local data.<br><br>Extreme weather volatility, pests, and soil degradation reduce yields and income. | **TerraSense** – a zero-UI, solar-powered voice assistant that delivers hyper-local insights and actionable prescriptions using on-field sensor data and AI.<br><br>Intelligence without internet. Guidance in every voice. |
+Smallholder farmers often rely on fragmented information, delayed weather updates, and manual decision-making. Extreme weather volatility, pests, and soil degradation reduce yields and income, resulting in massive post-harvest losses.
+
+TerraSense aims to become an intelligent agricultural assistant that transforms environmental data into practical recommendations. By taking the guesswork out of farming, we provide clear, actionable insights when it matters most.
 
 ---
 
-## 📸 Demo & Screenshots
+## 📂 Current Repository Scope
 
+This repository focuses on demonstrating the product concept and validating the user experience before committing to hardware development.
+
+**✅ Built (Current Implementation)**
+- Product concept & Venture pitch
+- React-based UI Prototype
+- Mission Control Dashboard
+- Product Architecture
+- Documentation
+
+**🔮 Future (Planned Vision)**
+- ESP32 Hardware Device
+- On-field Sensors (Moisture, Temp, Humidity)
+- Solar-powered Edge Node
+- Voice Assistant Integration
+- Field Deployment
+
+---
+
+## 📸 Dashboard Prototype
 
 <div align="center">
-  <img src="assets/dashboard.png" alt="Mission Control Dashboard" width="80%" />
+  <img src="assets/dashboard.png" alt="Mission Control Dashboard Prototype" width="80%" />
 </div>
 
 ---
 
-## ✨ What TerraSense Delivers
+## ⚙️ System Architecture
 
-- 🌱 **Hyper-local Predictions**: Weather, crop yield, pest & disease risk using on-field data + AI models.
-- 🗣️ **Voice Assistant**: Ask questions in your language. Get answers as voice.
-- 📋 **Actionable Prescriptions**: Clear, simple, and actionable steps tailored to your field.
-- 🎛️ **Mission Control**: Visualize trends, alerts, and insights across your farms.
-- ⚡ **Low Power + Offline First**: Built for low-connectivity zones. Works when others don't.
-
----
-
-## ⚙️ Technical Architecture
-
-High-level system architecture of TerraSense.
-
-### Hardware + Edge Flow
+### Current Implementation
 
 ```mermaid
 graph LR
-    subgraph EdgeSensors [ESP32 Node]
-        S1[Soil Moisture]
-        S2[Temperature]
-        S3[Humidity]
-        S4[pH/NPK]
-    end
-    
-    GSM[GSM Module <br> SIM800L]
-    
-    subgraph CloudServices [Cloud Services]
-        API[FastAPI Backend]
-        LLM[AI/ML LLM <br> OpenAI]
-        TTS[TTS Engine <br> ElevenLabs]
-    end
-    
-    Voice((Voice Output <br> Local Language))
+    Farmer((Farmer))
+    Dash[Mission Control Dashboard]
+    Engine[Prediction Engine Prototype]
+    Recs[Actionable Recommendations]
 
-    EdgeSensors -->|Data JSON| GSM
-    GSM <-->|Cellular GPRS| CloudServices
-    API --> LLM
-    LLM --> TTS
-    CloudServices -->|Response Audio| GSM
-    GSM --> Voice
+    Farmer -->|Views| Dash
+    Dash -->|Requests| Engine
+    Engine -->|Generates| Recs
+    Recs -->|Displayed to| Farmer
 ```
 
-### System Architecture
+### Future Vision
 
 ```mermaid
 graph LR
-    User((User Farmer))
-    Voice[TerraSense Assistant <br> Voice Interface]
-    Cloud[Backend Services <br> Cloud]
-    AI[Data & AI Layer]
-    Ext[(External Data <br> Weather, Sat, Govt)]
+    Sensors[On-field Sensors]
+    ESP[ESP32 Microcontroller]
+    GSM[GSM / Wi-Fi Module]
+    Cloud[Cloud AI Backend]
+    Voice[Voice Assistant Interface]
+    Farmer((Farmer))
 
-    User -->|Voice Query <br> Local Language| Voice
-    Voice --> Cloud
-    Cloud <--> AI
-    AI <--> Ext
-    Cloud -->|Feedback Loop| Voice
+    Sensors -->|Data| ESP
+    ESP -->|Telemetry| GSM
+    GSM -->|Network| Cloud
+    Cloud -->|Response| Voice
+    Voice -->|Audio| Farmer
 ```
 
 ---
 
 ## ⚖️ Engineering Decisions
 
-| Decision | Rationale |
-| :--- | :--- |
-| 🔋 **Why Edge Computing?** | Ensures low power consumption, faster response, and works in low-connectivity zones. |
-| 🎤 **Why Voice (Zero-UI)?** | Overcomes digital literacy barriers. Natural, intuitive, and accessible for all farmers. |
-| 📊 **Why Service vs Input Model?** | We provide actionable prescriptions, not just inputs. Focused on outcomes, not sales. |
-| 🧩 **Why Open Architecture?** | Modular, open, and extensible. Built to integrate with future sensors and models. |
+### Current
+- **React**: For rapid UI prototyping and interactive state management.
+- **TailwindCSS**: For reusable, high-fidelity UI components and rapid styling.
+- **Dashboard-First Approach**: Validating the user experience and data visualization before investing in hardware production.
+
+### Future
+- **ESP32**: For low-power, edge-level data processing.
+- **Solar Power**: For completely off-grid, sustainable use in rural areas.
+- **Voice Interface**: For ultimate accessibility, bypassing digital literacy and UI barriers entirely.
 
 ---
 
-## 📁 Repository Contents (Current State)
-
-This repository contains the digital prototype and supporting modules for TerraSense.
-
-- ✅ **React + TailwindCSS web app** (UI Simulation)
-- ✅ **Mission Control Dashboard** (Predictive Analytics)
-- ✅ **Voice Assistant Simulation** (Web Speech API + TTS)
-- ✅ **Venture Pitch Deck & One-Pager**
-- ✅ **Documentation & Architecture**
+## 📁 Repository Structure
 
 ```text
 agri/
-├── assets/         # Images, GIFs, diagrams (add your media here)
-├── index.html      # Venture Pitch & Landing Page
+├── assets/         # Prototype screenshots and assets
+├── index.html      # Product Pitch & Landing Page
 ├── agri.html       # Mission Control Dashboard Simulation
 └── README.md       # Project Documentation
 ```
 
-> [!NOTE]
-> The physical hardware (ESP32 device) is in active development and will be open-sourced in a separate repository upon stabilization.
+---
+
+## 🛠 Planned Hardware Architecture
+
+While currently a digital prototype, the planned hardware node will utilize the following stack:
+
+| Component | Specification (Planned) |
+| :--- | :--- |
+| **Microcontroller** | ESP32 DevKit V1 |
+| **Sensors** | Capacitive Soil Moisture, DHT22 Temp/Humidity |
+| **Power** | 5V Solar Panel + Li-ion Battery |
+| **Communication** | GSM Module |
 
 ---
 
 ## 🚀 Installation & Usage (Run Locally)
 
-Because this prototype is entirely browser-based and uses CDNs, there are **no dependencies or build steps** required.
+There are no dependencies or build steps required to view the prototype.
 
-1. **Clone the repository**
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/terrasense.git
-   cd terrasense
+   git clone https://github.com/sohansa035-bot/TerraSense.git
+   cd TerraSense
    ```
-
-2. **Open the Landing Page (Pitch)**
-   - Double-click `index.html` in your file explorer, or open it in your browser.
-
-3. **Open the Dashboard Simulation**
-   - Double-click `agri.html` in your file explorer, or open it in your browser.
+2. **View Pitch**: Double-click `index.html`.
+3. **View Dashboard**: Double-click `agri.html`.
 
 ---
-
-## 🛠 Hardware & Execution Roadmap
-
-### Bill of Materials (BOM)
-
-| Component | Specification |
-| :--- | :--- |
-| Microcontroller | ESP32 DevKit V1 |
-| Soil Moisture Sensor | Capacitive v1.2 |
-| Temp & Humidity Sensor | DHT22 / BME280 |
-| pH Sensor | Analog pH Probe |
-| GSM Module | SIM800L / SIM7600G |
-| Power | 5V Solar Panel + 3000mAh 18650 Battery |
-| Enclosure | IP65 Weatherproof Box |
-
-### Roadmap
-
-- [x] **v0.1.0** - Digital Prototype (Current) & Hardware Architecture Finalized
-- [ ] **v0.2.0** - Prototype Build & Field Testing
-- [ ] **v0.3.0** - AI Model Training on Field Data
-- [ ] **v1.0.0** - Pilot Deployment with Farmers (100+ farms)
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please read `CONTRIBUTING.md` before submitting a pull request.
 
 ## 📄 License
 
