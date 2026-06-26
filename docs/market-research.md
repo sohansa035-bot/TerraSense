@@ -11,8 +11,8 @@ Smallholder farmers operate on razor-thin margins. They lack access to:
 * **Secondary Users**: Agricultural cooperatives and large-scale farming operations looking for granular field data.
 
 ## Market Size
-* The global precision agriculture market is projected to reach $20+ billion by 2030.
-* Smallholder farmers produce roughly 30% of the world's food, representing a massive, underserved segment for affordable AgTech.
+* The global precision agriculture market is projected to reach **$20+ billion by 2030** ([Grand View Research, 2023](https://www.grandviewresearch.com/industry-analysis/precision-agriculture-market)).
+* Smallholder farmers produce roughly **30% of the world's food** ([UN Food and Agriculture Organization (FAO), 2021](https://www.fao.org/news/story/en/item/1395127/icode/)), representing a massive, underserved segment for affordable AgTech.
 
 ## User Pain Points Addressed
 * **Over-fertilization**: Causes soil degradation and wastes money. TerraSense prescribes exact dosages based on NPK levels.

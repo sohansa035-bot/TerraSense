@@ -23,8 +23,8 @@ TerraSense is a scalable, low-cost AgTech product designed to transform environm
 ## 📊 Market Validation & Competitive Analysis
 
 ### The Market Gap
-* **$20B+ TAM**: The precision agriculture market is booming, but current solutions target massive commercial farms.
-* **The Missing 30%**: Smallholder farmers produce 30% of the world's food but are entirely priced out of existing AgTech solutions. 
+* **$20B+ TAM**: According to industry reports, the precision agriculture market is booming, but current solutions target massive commercial farms. [See sources in `docs/market-research.md`]
+* **The Missing 30%**: Smallholder farmers produce 30% of the world's food but are entirely priced out of existing AgTech solutions.
 
 ### Competitive Positioning
 
@@ -45,7 +45,7 @@ TerraSense creates a closed-loop system for farm management:
 
 ### Core User Story
 
-> **Farmer notices yellowing leaves** ➔ **Opens TerraSense (or uses Voice Assistant)** ➔ **AI cross-references local soil moisture and NPK telemetry** ➔ **TerraSense diagnoses Nitrogen deficiency** ➔ **Generates precise urea application dosage** ➔ **Farmer applies treatment, saving money and preventing over-fertilization.**
+> **Farmer notices yellow leaves** ➔ **Asks TerraSense** ➔ **Receives diagnosis** ➔ **Gets fertilizer recommendation** ➔ **Improves yield**
 
 ---
 
@@ -56,11 +56,12 @@ TerraSense creates a closed-loop system for farm management:
 </div>
 
 *Current UI/UX Mockups & Planned Screens:*
-- ✅ **Mission Control Dashboard** (Shown above)
-- ⏳ **Farmer Home Feed**
-- ⏳ **Voice Assistant Interface**
-- ⏳ **Multispectral Crop Health Insights**
-- ⏳ **Automated Alerts & Weather**
+- ✅ **Dashboard** (Shown above)
+- ⏳ **Farmer Home**
+- ⏳ **Ask Assistant**
+- ⏳ **Alerts**
+- ⏳ **Crop Health**
+- ⏳ **Weather**
 
 ---
 
@@ -82,13 +83,13 @@ Investors and stakeholders can track our development milestones here:
 
 ### Current Implementation (Software Prototype)
 
-The current repository houses the v0.1 UI/UX prototype, built using a zero-build CDN-based React setup to allow instant deployment and rapid iteration without complex toolchains.
+The current repository houses the v0.1 UI/UX prototype, built using React via CDN (no build tooling) to allow instant deployment and rapid iteration without complex toolchains.
 
 ```mermaid
 graph LR
     Farmer((Farmer))
     Dash[Mission Control Dashboard]
-    Engine[Prediction Engine Prototype]
+    Engine[Rule-based Recommendation Prototype]
     Recs[Actionable Recommendations]
 
     Farmer -->|Views| Dash
@@ -97,7 +98,7 @@ graph LR
     Recs -->|Displayed to| Farmer
 ```
 
-### Future Vision (Edge-to-Cloud)
+### Planned Edge Architecture (v0.5)
 
 ```mermaid
 graph LR
@@ -162,8 +163,13 @@ To view the v0.1 React Prototype:
    git clone https://github.com/sohansa035-bot/TerraSense.git
    cd TerraSense/prototype
    ```
-2. **View Pitch**: Double-click `index.html`.
-3. **View Dashboard**: Double-click `agri.html`.
+2. **Launch Local Server**:
+   ```bash
+   python -m http.server
+   ```
+   *(Or open using Live Server in VS Code)*
+3. **View Pitch**: Open `http://localhost:8000/index.html`
+4. **View Dashboard**: Open `http://localhost:8000/agri.html`
 
 ---
 
