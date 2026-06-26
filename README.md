@@ -34,7 +34,7 @@
 
 <div align="center">
   <img src="assets/dashboard.png" alt="Mission Control Dashboard" width="45%" />
-  <img src="assets/hardware.jpg" alt="Solar Powered Hardware" width="45%" />
+  <img src="assets/hardware.png" alt="Solar Powered Hardware" width="45%" />
 </div>
 
 ---
@@ -57,7 +57,7 @@ High-level system architecture of TerraSense.
 
 ```mermaid
 graph LR
-    subgraph Edge Sensors [ESP32 Node]
+    subgraph EdgeSensors [ESP32 Node]
         S1[Soil Moisture]
         S2[Temperature]
         S3[Humidity]
@@ -66,7 +66,7 @@ graph LR
     
     GSM[GSM Module <br> SIM800L]
     
-    subgraph Cloud Services
+    subgraph CloudServices [Cloud Services]
         API[FastAPI Backend]
         LLM[AI/ML LLM <br> OpenAI]
         TTS[TTS Engine <br> ElevenLabs]
@@ -74,11 +74,11 @@ graph LR
     
     Voice((Voice Output <br> Local Language))
 
-    Edge Sensors -->|Data JSON| GSM
-    GSM <-->|Cellular GPRS| Cloud Services
+    EdgeSensors -->|Data JSON| GSM
+    GSM <-->|Cellular GPRS| CloudServices
     API --> LLM
     LLM --> TTS
-    Cloud Services -->|Response Audio| GSM
+    CloudServices -->|Response Audio| GSM
     GSM --> Voice
 ```
 
