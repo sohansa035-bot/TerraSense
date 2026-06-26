@@ -83,7 +83,7 @@ Investors and stakeholders can track our development milestones here:
 
 ### Current Implementation (Software Prototype)
 
-The current repository houses the v0.1 UI/UX prototype, built as a frontend prototype using HTML/CSS with lightweight React integration via CDN to allow instant deployment and rapid iteration without complex toolchains.
+The current repository houses the v0.1 UI/UX prototype, built as an HTML prototype enhanced with lightweight React components via CDN to allow instant deployment and rapid iteration without complex toolchains.
 
 ```mermaid
 graph LR
