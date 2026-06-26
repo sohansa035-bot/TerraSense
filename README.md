@@ -71,7 +71,7 @@ graph LR
 graph LR
     Sensors[On-field Sensors]
     ESP[ESP32 Microcontroller]
-    GSM[GSM / Wi-Fi Module]
+    GSM[GSM Wi-Fi Module]
     Cloud[Cloud AI Backend]
     Voice[Voice Assistant Interface]
     Farmer((Farmer))
