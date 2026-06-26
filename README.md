@@ -30,11 +30,9 @@
 
 ## 📸 Demo & Screenshots
 
-> **Note:** Replace these placeholders with actual images of your hardware and dashboard by placing them in the `assets/` directory.
 
 <div align="center">
-  <img src="assets/dashboard.png" alt="Mission Control Dashboard" width="45%" />
-  <img src="assets/hardware.png" alt="Solar Powered Hardware" width="45%" />
+  <img src="assets/dashboard.png" alt="Mission Control Dashboard" width="80%" />
 </div>
 
 ---
